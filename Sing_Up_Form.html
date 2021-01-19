@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Sing UP Form Js</title>
+  <style>
+    img {
+      width: 100%;
+      height: 100px;
+    }
+
+    #demo1 {
+      margin-left: 300px;
+    }
+    #test5
+    {
+      font-size: 8px;
+      color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="demo">
+    <img src="..\images\facebook.jpg" alt="fb">
+  </div>
+  <div id="demo1">
+    <h2 style="color: black;">Create a new account</h2>
+    <h4 style="color: cornflowerblue;"> It's quick and easy</h4>
+    <form name="myForm">
+      <p id="test"></p>
+      <input type="text" name="fname" id="fname" placeholder="First Name">&nbsp;
+      <input type="text" name="lname" id="lname" placeholder="Sur Name">
+      <br />
+      <p id="test1"></p>
+      <input type="email" name="email" id="email" size=" 47" placeholder="Mobile number or email address">
+      <br />
+      <p id="test2"></p>
+      <input type="password" name="pass" id="pass" placeholder="Password">
+      <p id="test3"></p>
+      <h5 style="color: cornflowerblue;"> Date of Birth</h5>
+      <input type="date" name="no" id="date" placeholder="Date Of Birth">
+           
+      <p id="test4">
+      <h5 style="color:cornflowerblue;"> Gender</h5>
+      <div id="gender">
+      <input type="radio" name="gender" value="Male">Male 
+    <input type="radio" name="gender" value="Female">Female 
+    <input type="radio" name="gender" value="Others">Others 
+  </div>
+      </p>
+      
+       <p id="test5"> clicking Sign Up, you agree to our Terms, Data Policy and Cookie Policy.
+          You may receive SMS notifications from us and can opt out at any time.</p>
+      <input type="submit" value="SignUp" onclick="validationForm(event)">
+      <input type="reset" value="Reset">
+    </form>
+  </div>
+
+  <script>
+    function validationForm(e) {
+      // debugger;
+      e.preventDefault();
+       var fname, lname, email, pass, gender, date;
+       fname = document.getElementById("fname").value ="";
+       lname = document.getElementById("lname").value = '';
+       email = document.getElementById("email").value = '';
+       date = document.getElementById("date").value = '';
+       gender= document.getElementById("gender").value = '';
+       pass = document.getElementById("pass").value = '';
+
+    //   if(fname==""|| lname==""|| email==""|| date==""|| gender==""|| pass=="")
+    //   {
+    //             document.getElementById("fname").style.border = " 1px solid red";
+    //             document.getElementById("lname").style.border = " 1px solid red";
+    //             document.getElementById("email").style.border = " 1px solid red";
+    //             document.getElementById("date").style.border = " 1px solid red";
+    //             document.getElementById("pass").style.border = " 1px solid red";
+    //             document.getElementById("gender").style.border = " 1px solid red";
+    //   }
+    //   return false();
+    // }
+
+
+
+      if (fname == "") {
+        document.getElementById("test").innerHTML = "Please enter the the field"
+        document.getElementById("test").style.color = "blue"
+        document.getElementById("fname").style.borderColor = "red"
+        document.getElementById("lname").style.borderColor = "red"
+      }
+      if (email == "") {
+        document.getElementById("test1").innerHTML = "Please enter the the field"
+        document.getElementById("test1").style.color = "blue"
+        document.getElementById("email").style.borderColor = "red"
+      }
+      if (pass == "") {
+        document.getElementById("test2").innerHTML = "Please enter the the field"
+        document.getElementById("test2").style.color = "blue"
+        document.getElementById("pass").style.borderColor = "red"
+      }
+      if (date == "") {
+        document.getElementById("test3").innerHTML = "Please enter the the field"
+        document.getElementById("test3").style.color = "blue"
+        document.getElementById("date").style.borderColor = "red"
+      }
+      if (gender == "") {
+        document.getElementById("test4").innerHTML = "Please enter the the field"
+        document.getElementById("test4").style.color = "blue"
+        document.getElementById("gender").style.borderColor ="red";
+      }
+      ErrorText = "";
+            if ((myForm.gender[0].checked == false) && (myForm.gender[1].checked == false))
+             {
+                //document.write("Please choose your Gender: Male or Female");
+                return false;
+            }
+           if (ErrorText = "") { myForm.submit() }
+        
+        else {
+                 document.myForm.submit();
+            }
+    
+    }
+
+  </script>
+</body>
+
+</html>
